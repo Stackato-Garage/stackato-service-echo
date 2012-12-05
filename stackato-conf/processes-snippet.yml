@@ -1,0 +1,8 @@
+  -
+    name: echo_node
+    config_origin: /s/vcap/services/echo/config/echo_node.yml
+    doozer_ephemeral: true
+  -
+    name: echo_gateway
+    config_origin: /s/vcap/services/echo/config/echo_gateway.yml
+    doozer_ephemeral: true

@@ -1,5 +1,5 @@
 ---
-cloud_controller_uri: api.vcap.me
+cloud_controller_uri: api.stackato.local
 service:
   name: echo
   version: "1.0"

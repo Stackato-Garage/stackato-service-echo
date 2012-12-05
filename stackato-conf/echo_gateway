@@ -1,0 +1,9 @@
+
+[program:echo_gateway]
+command=/s/vcap/services/echo/bin/echo_gateway
+priority=30
+redirect_stderr=true
+stdout_logfile=/s/logs/echo_gateway.log
+stdout_logfile_maxbytes=1MB
+stdout_logfile_backups=3
+autostart=false

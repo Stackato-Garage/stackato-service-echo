@@ -1,0 +1,9 @@
+
+[program:echo_node]
+command=/s/vcap/services/echo/bin/echo_node
+priority=30
+redirect_stderr=true
+stdout_logfile=/s/logs/echo_node.log
+stdout_logfile_maxbytes=1MB
+stdout_logfile_backups=3
+autostart=false
