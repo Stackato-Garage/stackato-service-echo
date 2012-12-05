@@ -78,15 +78,16 @@ easy enabling/disabling of logical groups of services.
 
 ## Loading the config into Doozer
 
-Doozer is the centralised configuration management component in
+Doozer is the centralized configuration management component in
 Stackato, including the service configuration we have just added. To
 load the settings from the YAL files in 'echo/config/':
 
-Change to the /s/ directory (symlink of /home/stackato/stackato/), then start supervisord:
+Change to the /s/ directory (symlink of /home/stackato/stackato/), then
+start supervisord:
 
     $ start-supervisord
 
-Tun the following two commands:
+Run the following two commands:
 
     RUBYLIB=kato/lib ruby -e 'require "yaml"; require "kato/doozer"; Kato::Doozer.set_component_config("echo_node", YAML.load_file("/s/vcap/services/echo/config/echo_node.yml"))'
   
