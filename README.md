@@ -105,10 +105,15 @@ nodes so we must set them accordingly:
 ## Enable echo and start
 
     $ kato enable echo
-    ...
-    $ kato start
+    starting echo_node...               ok
+    starting echo_gateway...            ok
+    starting logyard...                 ok
+    starting cloudevents...             ok
+    starting systail...                 ok
+
+Finally, start all other stackato processes:
     
-The 'echo' processes should appear in the list.
+    $ kato start
 
 ## Verify the service
 
