@@ -7,11 +7,11 @@ service:
   plans: ['free']
   default_plan: free
   tags: ['echo', 'echo-1.0', 'echobased', 'demo']
-ip_route: localhost
+ip_route: 127.0.0.1
 index: 0
 token: changeechotoken
 logging:
   level: debug
-mbus: nats://localhost:4222
+mbus: nats://127.0.0.1:4222/
 pid: /var/vcap/sys/run/echo_service.pid
 node_timeout: 2

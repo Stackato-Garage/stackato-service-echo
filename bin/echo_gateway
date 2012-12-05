@@ -12,6 +12,10 @@ require 'echo_service/echo_provisioner'
 
 class VCAP::Services::Echo::Gateway < VCAP::Services::Base::Gateway
 
+  def initialize
+    @component_id = "echo_gateway"
+  end
+
   def provisioner_class
     VCAP::Services::Echo::Provisioner
   end
