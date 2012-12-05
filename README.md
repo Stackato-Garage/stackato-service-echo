@@ -6,6 +6,12 @@ provides a port credential. This sample, along with the following
 instructions, show how to add a system service to a Stackato micro
 cloud.
 
+This sample is based on [cloudfoundry/vcap-services/echo](https://github.com/cloudfoundry/vcap-services/tree/master/echo)
+with some additional configuration (e.g for `kato` and `supervisord`)
+and other minor differences (e.g. the Gemfile). The instructions
+here are for [Stackato
+2.6](http://www.activestate.com/stackato/get_stackato).
+
 ## Copying/Cloning the Service to Stackato
 
 Log in to the Stackato VM (micro cloud or service node) as the
@@ -79,7 +85,7 @@ load the settings from the YAL files in 'echo/config/':
 Change to the /s/ directory (symlink of /home/stackato/stackato/) and
 run the following two commands:
 
-    RUBYLIB=kato/lib ruby -e 'require "yaml"; require "kato/doozer"; Kato::Doozer.set_component_config("echo_gateway", YAML.load_file("/s/vcap/services/echo/config/echo_gateway.yml"))'
+    RUBYLIB=kato/lib ruby -e 'require "yaml"; require "kato/doozer"; Kato::Doozer.set_component_config("echo_node", YAML.load_file("/s/vcap/services/echo/config/echo_node.yml"))'
   
     RUBYLIB=kato/lib ruby -e 'require "yaml"; require "kato/doozer"; Kato::Doozer.set_component_config("echo_gateway", YAML.load_file("/s/vcap/services/echo/config/echo_gateway.yml"))'
   
