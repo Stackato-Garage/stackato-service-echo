@@ -82,8 +82,11 @@ Doozer is the centralised configuration management component in
 Stackato, including the service configuration we have just added. To
 load the settings from the YAL files in 'echo/config/':
 
-Change to the /s/ directory (symlink of /home/stackato/stackato/) and
-run the following two commands:
+Change to the /s/ directory (symlink of /home/stackato/stackato/), then start supervisord:
+
+    $ start-supervisord
+
+Tun the following two commands:
 
     RUBYLIB=kato/lib ruby -e 'require "yaml"; require "kato/doozer"; Kato::Doozer.set_component_config("echo_node", YAML.load_file("/s/vcap/services/echo/config/echo_node.yml"))'
   
@@ -97,12 +100,10 @@ These commands must be run after any change in the YAML config files.
 The auth token used  must match between the service and cloud controller
 nodes so we must set them accordingly:
 
-    $ kato config cloud_controller builtin_services/echo ‘{“token”: “<echo_gateway.yml auth token>”}’ --json
+    $ kato config cloud_controller builtin_services/echo '{"token": "<echo_gateway.yml auth token>"}' --json
 
-## Start supervisord and enable echo
+## Enable echo and start
 
-    $ start-supervisord
-    ...
     $ kato enable echo
     ...
     $ kato start
