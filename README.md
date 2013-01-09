@@ -80,7 +80,7 @@ easy enabling/disabling of logical groups of services.
 
 Doozer is the centralized configuration management component in
 Stackato, including the service configuration we have just added. To
-load the settings from the YAL files in 'echo/config/':
+load the settings from the YAML files in 'echo/config/':
 
 Change to the /s/ directory (symlink of /home/stackato/stackato/), then
 start supervisord:
