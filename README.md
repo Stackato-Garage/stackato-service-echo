@@ -26,21 +26,21 @@ Alternatively, copy a local checkout to Stackato using SCP:
 
 ## Install the service gems
 
-On the VM, go to the 'echo' directory and run 'bundle install':
+On the VM, go to the 'echo' directory and run 'bundle update':
 
     $ cd /s/vcap/services/echo
-    $ bundle install
+    $ bundle update
 
 ## Edit the config files
 
-Some settings in the default files will need to be modified. This may include:
+Some settings in the default files in the config/ directory will need to be modified. This may include:
 
 * `cloud_controller_uri`: This needs to match the API endpoint of your
   system (e.g. api.stackato-wxyz.local)
 * `token`: can be any string, but we will need to add this auth token
   to the cloud_controller in a later step
 * `mbus`: This should match the setting for other services. You can check
-  the correct setting using `kato config redis_node mbus`
+  the correct setting using `kato config get redis_node mbus`
 
 ## Install to supervisord
 
@@ -64,11 +64,11 @@ Copy the supervisord config files:
 
 The 'kato' administrative tool will also need configuration to recognize
 the new service. This can be done by appending the contents of
-process-snippet.yml and role_process-snippet.yml to their respective
+process-snippet.yml and roles-snippet.yml to their respective
 kato config files:
 
     $ cat stackato-conf/processes-snippet.yml >> /s/etc/kato/processes.yml
-    $ cat stackato-conf/role_processes-snippet.yml >> /s/etc/kato/role_processes.yml
+    $ cat stackato-conf/roles-snippet.yml >> /s/etc/kato/roles.yml
 
 Note that 'echo_node' should always be specified before 'echo-gateway'.
 
@@ -98,14 +98,17 @@ These commands must be run after any change in the YAML config files.
 
 ## Add the service AUTH token to the cloud controller
 
-The auth token used  must match between the service and cloud controller
+The auth token used must match between the service and cloud controller
 nodes so we must set them accordingly:
 
-    $ kato config cloud_controller builtin_services/echo '{"token": "<echo_gateway.yml auth token>"}' --json
+    $ kato config set cloud_controller builtin_services/echo '{"token": "<echo_gateway.yml auth token>"}' --json
+
+Replace the <echo_gateway.yml auth token> string above with the auth
+token you setup up earlier in config/echo_gateway.yml
 
 ## Enable echo and start
 
-    $ kato enable echo
+    $ kato role add echo
     starting echo_node...               ok
     starting echo_gateway...            ok
     starting logyard...                 ok

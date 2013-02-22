@@ -1,0 +1,5 @@
+echo:
+    max_per_cluster: 1
+    processes:
+        - echo_node
+        - echo_gateway

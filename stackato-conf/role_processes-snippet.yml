@@ -1,6 +1,0 @@
-echo:
-    - echo_node
-    - echo_gateway
-    - logyard
-    - cloudevents
-    - systail
