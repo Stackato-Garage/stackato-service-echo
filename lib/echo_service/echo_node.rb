@@ -109,7 +109,7 @@ class VCAP::Services::Echo::Node
   end
 
   def destroy_instance(instance)
-    raise EchoError.new(EchoError::ECHO_DESTORY_INSTANCE_FAILED, instance.inspect) unless instance.destroy
+    raise EchoError.new(EchoError::ECHO_DESTROY_INSTANCE_FAILED, instance.inspect) unless instance.destroy
   end
 
   def get_instance(name)

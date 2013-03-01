@@ -70,7 +70,7 @@ kato config files:
     $ cat stackato-conf/processes-snippet.yml >> /s/etc/kato/processes.yml
     $ cat stackato-conf/roles-snippet.yml >> /s/etc/kato/roles.yml
 
-Note that 'echo_node' should always be specified before 'echo-gateway'.
+Note that 'echo_node' should always be specified before 'echo_gateway'.
 
 Optionally, you can add echo to the "data-services" group in
 role_groups.yml or create a new group. These groupings enable subsequent
