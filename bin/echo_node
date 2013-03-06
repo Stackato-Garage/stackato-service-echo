@@ -12,6 +12,10 @@ require "echo_service/echo_node"
 
 class VCAP::Services::Echo::NodeBin < VCAP::Services::Base::NodeBin
 
+  def initialize
+    @component_id = "echo_node"
+  end
+
   def node_class
     VCAP::Services::Echo::Node
   end
