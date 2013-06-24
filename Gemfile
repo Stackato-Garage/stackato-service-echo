@@ -15,7 +15,6 @@ gem "thin"
 gem 'vcap_common', :path => '../../common', :require => ['vcap/common', 'vcap/component']
 gem 'vcap_logging', '>=0.1.3', :require => ['vcap/logging']
 gem "vcap_services_base", :path => "../base"
-gem "vcap_services_base", :path => '../base'
 
 group :test do
   gem "rake"
