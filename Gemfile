@@ -8,7 +8,7 @@ gem "uuidtools"
 gem "datamapper", "= 1.1.0"
 gem "dm-sqlite-adapter"
 gem "do_sqlite3"
-gem "sinatra", "~> 1.2.3"
+gem "sinatra"
 gem "thin"
 
 
