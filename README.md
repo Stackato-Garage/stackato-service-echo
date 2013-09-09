@@ -29,7 +29,7 @@ Alternatively, copy a local checkout to Stackato using SCP:
 On the VM, go to the 'echo' directory and run 'bundle update':
 
     $ cd /s/vcap/services/echo
-    $ bundle update
+    $ bundle install 
 
 ## Edit the config files
 
