@@ -1,6 +1,13 @@
-Echo Service for Stackato
-=========================
+(Deprecated) Echo Service for Stackato
+======================================
 
+**For Stackato 2.x**
+
+This sample service uses the older [Cloud Foundry v1 Service Broker
+API](http://docs.cloudfoundry.org/services/api-v1.html). It will not
+work with current versions of Stackato or Cloud Foundry.
+
+-----
 An example system service for Stackato which echoes service requests and
 provides a port credential. This sample, along with the following
 instructions, show how to add a system service to a Stackato micro
